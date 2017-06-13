@@ -1,0 +1,44 @@
+@media screen and (max-width:500px) {
+    img{
+        width:100%;
+        /*height:100%;*/
+    	background-color: blue;
+    }
+	.nav-links{
+		/*margin-right: 30%*/
+		/*margin: 0;*/
+    	/*width: 96%;*/
+    	padding:0;
+    	
+	}
+	
+	ul {
+		width: 100%;
+	}
+
+	li{
+		text-align: center;
+		list-style-type:none;
+		margin-bottom: 10px;
+    	width: 100%;
+    	padding: 10px 0;
+    	background-color: lightgrey;
+	}
+
+	a{
+		width:100%;
+        height:100%;
+        background-color: lightgrey;
+	}
+
+	/*main{
+		width:100%;*/
+        /*height:100%;*/
+	}
+
+
+	/*body {
+		background-color: white;
+	}*/
+}
+

@@ -12,18 +12,26 @@ var favorite = 'indigo'; // TODO: change this to your favorite color from the li
 // TODO: Create a block of if/else statements to check for every color except indigo and violet.
 // TODO: When a color is encountered log a message that tells the color, and an object of that color.
 //       Example: Blue is the color of the sky.
-console.log(color)
-if (color == 'red') { 
+console.log("the random color is " + color)
+if (color === 'red') { 
         console.log("roses are red");
-     } else if (color == 'yellow') {
+     } else if (color === 'yellow') {
         console.log("yellow sunshine");
-     } else if (color == 'orange') {
+     } else if (color === 'orange') {
         console.log("oranges are orange");
-     }	else if (color == 'green') {
+     }	else if (color === 'green') {
         console.log("green as grass");
-     }	else if (color == 'blue') {
+     }	else if (color === 'blue') {
         console.log("water is are blue");
+     } else {
+     	console.log("no idea what this is")
      }
+
+
+
+
+     var cameron = 180;
+     
 
 // TODO: Have a final else that will catch indigo and violet.
 // TODO: In the else, log: I do not know anything by that color.

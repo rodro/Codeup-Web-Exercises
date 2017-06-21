@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>DOM: Query and Modify</title>
+</head>
+<body>
+
+<h1 id="main-header">Hello World!</h1>
+<ul>
+    <li data-dbid="1">Item 1</li>
+    <li data-dbid="2">Item 2</li>
+    <li data-dbid="3">Item 3</li>
+    <li data-dbid="4">Item 4</li>
+    <li data-dbid="5">Item 5</li>
+</ul>
+<h2 id="sub-header">Hello Again.</h2>
+<p class="sub-paragraph">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+    aliquip ex ea commodo consequat. Duis aute irure dolor in
+    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+    culpa qui officia deserunt mollit anim id est laborum.
+</p>
+<button id="btn1">Make JavaScript Cool!</button>
+<button id="btn2">Make the Sub header Blue</button>
+<button id="btn3">Make the lists grey</button>
+<button id="btn4">Makes things done</button>
+
+
+
+<script>
+    (function() {
+        "use strict";
+        // TODO: Uncomment next line and get the main header element by id
+        
+        var firstButton = document.getElementById('btn1');
+        function changeHeader(){
+        
+            var mainHeader = document.getElementById('main-header');
+            console.log(mainHeader)
+            mainHeader.innerHTML = "JavaScript is Cool";
+        }
+
+        firstButton.addEventListener("click", changeHeader);
+            
+        
+
+        // TODO: Uncomment the next line and get the sub header element by id
+        
+        var secondButton = document.getElementById('btn2');
+        function makeItBlue(){
+            var subHeader = document.getElementById('sub-header');
+            console.log(subHeader)
+            subHeader.style.color = "blue"
+        }
+
+        secondButton.addEventListener("click", makeItBlue);
+        // TODO: Uncomment the next line and get all list items
+        
+
+        var listItems = document.getElementsByTagName('li');
+        console.log(listItems)
+
+        // TODO: Set text color on every other list item to grey
+        
+        var thirdButton = document.getElementById('btn3');
+         function makeItGrey(){
+            var liColor = document.getElementsByTagName('li');
+                liColor[0].style.color = "grey"
+                liColor[2].style.color = "grey"
+                liColor[4].style.color = "grey"
+         }       
+
+        thirdButton.addEventListener("click", makeItGrey);
+        // TODO: Set text color of li with dbid = 1 to blue
+
+            // liColor[1].style.color = "blue" 
+
+        // TODO: Uncomment the next line and get all elements with class name sub-paragraph
+        var subParagraphs = document.getElementsByClassName('sub-paragraph');
+            console.log(subParagraphs);
+
+
+
+        // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
+        
+        var lastButton = document.getElementById('btn4');
+            function makeItDone(){
+                var subPar = document.getElementsByClassName('sub-paragraph')
+                subPar[0].innerHTML = "Mission Accomplished!";
+        }
+
+        lastButton.addEventListener("click", makeItDone);
+    
+    })();
+</script>
+</body>
+<img src="http://static6.businessinsider.com/image/4ea5b2d869bedd576a000032/the-surprising-story-behind-the-macs-original-calculator-app.jpg" alt="" usemap="#Map" />
+<map name="Map" id="Map">
+    <area alt="c" title="" href="#" shape="rect" coords="124,97,153,122" />
+    <area alt="=" title="" href="#" shape="rect" coords="161,97,189,122" />
+    <area alt="/" title="" href="#" shape="rect" coords="198,97,226,122" />
+    <area alt="*" title="" href="#" shape="rect" coords="235,96,260,121" />
+    <area alt="7" title="" href="#" shape="rect" coords="123,133,153,159" />
+    <area alt="8" title="" href="#" shape="rect" coords="162,134,189,158" />
+    <area alt="9" title="" href="#" shape="rect" coords="198,133,226,160" />
+    <area alt="-" title="" href="#" shape="rect" coords="235,133,263,159" />
+    <area alt="4" title="" href="#" shape="rect" coords="125,169,153,195" />
+    <area alt="5" title="" href="#" shape="rect" coords="162,168,189,196" />
+    <area alt="6" title="" href="#" shape="rect" coords="197,169,226,196" />
+    <area alt="+" title="" href="#" shape="rect" coords="234,170,262,194" />
+    <area alt="1" title="" href="#" shape="rect" coords="124,206,152,231" />
+    <area alt="2" title="" href="#" shape="rect" coords="163,207,190,232" />
+    <area alt="3" title="" href="#" shape="rect" coords="197,205,226,231" />
+    <area alt="0" title="" href="#" shape="rect" coords="124,242,187,266" />
+    <area alt="." title="" href="#" shape="rect" coords="198,244,226,267" />
+    <area alt="=" title="" href="#" shape="rect" coords="234,205,263,267" />
+   
+</map>
+
+</html>

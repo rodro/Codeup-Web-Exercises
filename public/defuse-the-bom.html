@@ -16,7 +16,7 @@
     var detonationTimer = 5;
 
     // TODO: This function needs to be called once every second
-    var delay = 1000
+    var interval = 1000;
     function updateTimer() {
         if (detonationTimer == 0) {
             alert('EXTERMINATE!');
@@ -26,14 +26,23 @@
         }
 
         detonationTimer--;
-    }
+        }
 
+        var detonation = setInterval(function () {
+
+            updateTimer();
+
+        }, interval);
     // TODO: When this function runs, it needs to
     // cancel the interval/timeout for updateTimer()
+  
+   
     function defuseTheBOM() {
-        var timeoutId = setTimeout (function(){
-            outputDelay(delay);
-        } 
+       clearInterval(detonation);
+       alert ('Succesfully Defuse the bomb!');
+        // var timeoutId = setTimeout (function(){
+        //     outputDelay(delay);
+        // })
     }
 
     // Don't modify anything below this line!

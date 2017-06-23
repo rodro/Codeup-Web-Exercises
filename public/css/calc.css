@@ -1,35 +1,39 @@
-/* Basic reset */
+/* /* Basic reset */
+body {
+  font-family: "HelveticaNeue-UltraLight", "Helvetica Ultra Light", "Helvetica Neue", Helvetica, Arial, sans-serif; 
+  font-weight: 100;
+}
+
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	
 	/* Better text styling */
-	font: bold 14px Arial, sans-serif;
+	
 }
 
-/* Finally adding some IE9 fallbacks for gradients to finish things up */
+font-family: "Helvetica";
 
-/* A nice BG gradient */
+/* BG gradient */
 html {
 	height: 100%;
-	background: white;
-	background: radial-gradient(circle, #fff 20%, #ccc);
+	background: black;
+	background: radial-gradient(circle, #000 20%, #fff);
 	background-size: cover;
 }
 
 /* Using box shadows to create 3D effects */
 #calculator {
-	width: 325px;
+	width: 264px;
 	height: auto;
 	
 	margin: 100px auto;
-	padding: 20px 20px 9px;
+	padding: 0px 0px 0px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 	
-	background: #9df2ea;
-	background: linear-gradient(#ffffff, #ffffff);
-	border-radius: 3px;
-	box-shadow: 0px 4px #ffffff, 0px 10px 15px rgba(0, 0, 0, 0.2);
+	background: #202020, 
+	
 }
 
 /* Top portion */
@@ -37,26 +41,48 @@ html {
 	float: left;
 }
 
-/* Inset shadow on the screen to create indent */
+/* black screen */
 .top .screen {
-	height: 40px;
-	width: 212px;
+	height: 100px;
+	width: 265px;
 	
 	float: right;
 	
 	padding: 0 10px;
 	
-	background: rgba(0, 255, 0, 0.2);
-	border-radius: 3px;
-	box-shadow: inset 0px 4px rgba(0, 0, 0, 0.2);
+	background: rgba(0, 0, 0, 255);
+	border-radius: 1px;
+	
 	
 	/* Typography */
-	font-size: 17px;
-	line-height: 40px;
-	color: grey;
-	text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+	font-size: 50px;
+	line-height:120px;
+	color: white;
+	 rgba(0, 0, 0, 0.2);
 	text-align: right;
 	letter-spacing: 1px;
+}
+
+.keys .operator{
+  font-size: 30px;
+	line-height:60px;
+	color: white;
+}
+
+.keys .wide{
+  height: 60px;
+	width: 132px;
+	
+	float: left;
+	position: relative;
+  width: 132px;
+  height: 66px;
+  border: 0px solid ##d1d3d5
+	
+/* 	padding: 0 0px; */
+	
+	background: rgba(250, 211, 213, 255);
+	border-radius: 0px;
 }
 
 /* Clear floats */
@@ -66,79 +92,76 @@ html {
 .keys span, .top span.clear {
 	float: left;
 	position: relative;
-	top: 0;
+	top: 1;
 	
 	cursor: pointer;
 	
 	width: 66px;
-	height: 36px;
+	height: 66px;
 	
-	background: white;
-	border-radius: 3px;
-	box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+	background: lgrey
+    ;
+	border-radius: 0px;
+	box-shadow: 1px 1px rgba(0, 0, 0, 0.4);
 	
-	margin: 0 7px 11px 0;
+	margin: 0 0px 0px 0;
 	
-	color: #888;
-	line-height: 36px;
+	color: #000;
+	line-height: 72px;
 	text-align: center;
 	
-	/* prevent selection of text inside keys */
+  
+  
+	/* no select */
 	user-select: none;
 	
-	/* Smoothing out hover and active states using css3 transitions */
-	transition: all 0.2s ease;
+	/* Smoothing  hover */
+	transition: all 0.1s ease;
 }
 
-/* Remove right margins from operator keys */
-/* style different type of keys (operators/evaluate/clear) differently */
+
+
+/* operator colors*/
 .keys span.operator {
-	background: #FFFFFF;
+	background: orange;
 	margin-right: 0;
 }
 
 .keys span.eval {
-	background: #f1ff92;
-	box-shadow: 0px 4px #9da853;
-	color: #888e5f;
-}
-
-.top span.clear {
-	background: #ff9fa8;
-	box-shadow: 0px 4px #ff7c87;
-	color: white;
-}
-
-/* Some hover effects */
-.keys span:hover {
-	background: #9c89f6;
-	box-shadow: 0px 2px #6b54d3;
-	color: white;
-}
-
-.keys span.eval:hover {
-	background: #abb850;
-	box-shadow: 0px 2px #717a33;
+	background: orange;
+	box-shadow: 3px 3px #202020;
 	color: #ffffff;
 }
 
-.top span.clear:hover {
-	background: #f68991;
-	box-shadow: 0px 4px #d3545d;
-	color: white;
+#wide span{
+  width: 86px;
+	height: 66px;
+  float: left;
+	position: relative;
+	top: 1;
 }
 
-/* Simulating "pressed" effect on active state of the keys by removing the box-shadow and moving the keys down a bit */
+.top span.clear {
+	background: grey;
+	box-shadow: 1px 1px grey
+    ;
+	color: grey;
+}
+
+
+
+
+/* push down */
 .keys span:active {
-	box-shadow: 0px 0px #6b54d3;
+	box-shadow: 1px 1px #202020;
 	top: 4px;
 }
 
 .keys span.eval:active {
-	box-shadow: 0px 0px #717a33;
+	box-shadow: 1px 1px #202020;
 	top: 2px;
 }
 
 .top span.clear:active {
 	top: 2px;
-	box-shadow: 0px 0px #d3545d;
+	box-shadow: 1px 1px #202020; */

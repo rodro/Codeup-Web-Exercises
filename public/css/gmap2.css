@@ -1,0 +1,14 @@
+#map-canvas {
+   width: 770px;
+   height: 481px;
+   border: 1px solid black;
+};
+#map-canvas {
+  display: table;
+  margin:30px auto;
+}
+
+.head {
+	text-align: center;
+    color: red;
+}

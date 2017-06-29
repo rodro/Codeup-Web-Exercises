@@ -2,11 +2,18 @@
 <html>
 <head>
 	<title>jquery_faq</title>
-	<script
-  src="https://code.jquery.com/jquery-3.2.1.js"
-  </script>
+	<style>
+		/*.invisible{
+			display: none;
+		}*/
+
+	</style>	
 </head>
 <body>
+<div>
+	<h1>Would you like to sign up for our newsletter?</h1>
+	<span id="close">x</span>
+</div>
 <dl>
   <dt>1 Guadalupe Mountains National Park</dt>
   <dd class="invisible">is in the vast Chihuahuan Desert of western Texas.</dd>
@@ -30,14 +37,43 @@
   <dd class="invisible">"Inscription Rock" is a soft sandstone monolith on which are carved hundreds of inscriptions. Included are inscriptions of the Spanish explorers and settlers of the American Southwest.
 </dd>
 </dl>
+<br>
+<br>
+<br>
+<button style="btn btn-default" type="button">Click Me!</button>
+<br>
+<br>
+<br>
 
-</body>
-<style>
-	/*.invisible{
-		display: none;
-	}*/
+<h3>Rat races</h3>
+<ul id="national-parks">
+    <li>getting to work</li>
+    <li>beating traffic</li>
+    <li>leaving a sport game</li>
+    <li>exiting a theater</li>
+    <li>leaving work</li>
+</ul>
+<br>
+<h3>Rick and Morty characters</h3>
+<ul id="shows">
+    <li>Rick Sanchez</li>
+    <li>Morty Smith</li>
+    <li>Glip Glops</li>
+    <li>Bird Person</li>
+    <li>Meeseeks</li>
+</ul>
+<br>
+<h3>Things Rick says</h3>
+<ul id="national-parks">
+    <li>Wubalba dub dub</li>
+    <li>c137</li>
+    <li>oldest ricktrick in the book</li>
+    <li>shoneys</li>
+    <li>bro</li>
+</ul>
 
-</style>
+
+<script src="https://code.jquery.com/jquery-3.2.1.js"> </script>
 <script>
 "use strict";
 // 	$('document').ready(function() {
@@ -46,12 +82,22 @@
 //         $('.invisible').toggleClass('invisible');
 //     });
 
-
+console.log("test");
 // });
-$('dt').css('background-color', 'yellow');
-	$('dt').click(function(){
+// $('dt').css('background-color', 'yellow');
+// 	$('dt').click(function(e){
+// 		$(ul).css('background-color', 'yellow');
 		
-		
-	});
+// 	});
+
+// 	$('button').click(function() {
+//   		$(this).css('background-color', 'yellow');
+// });
+$('#close').click(function(e){
+		$('h1').hide();
+			$('#close').hide();
+	})
+
 </script>
+</body>
 </html>

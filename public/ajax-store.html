@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+</head>
+<body>
+
+<h1>My Tool Store</h1>
+<input id="ajax-button type"='button' onclick='sendRequest()' value='Pull Request'>
+<table id="products">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Categories</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+</table>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script>
+
+$('#ajax-button').click(sendRequest);
+
+    function sendRequest() {
+        var getRequest = $.get("/data/inventory.json");
+
+        $.get(getRequest).done(function(data, status) {
+            console.log(data);
+        });
+
+        getRequest.fail(function(jqXhr, status, error) {
+            console.log(status);
+            console.log(error);
+        });
+    }
+
+
+(function() {
+    "use strict";
+    // TODO: Create an ajax GET request for /data/inventory.json
+
+    // TODO: Take the data from inventory.json and append it to the products table
+    //       HINT: Your data should come back as a JSON object; use console.log() to inspect
+    //             its contents and fields
+    //       HINT: You will want to target #insertProducts for your new HTML elements
+// function sendRequest (){
+    $.get("data/inventory.json").done(function(data)
+            {console.log(data);
+
+    })
+
+    // var getRequest = $.get(".data/inventory.json")
+
+
+    // getRequest.done(function(data, status){
+    //     console.log (data);
+    // })
+
+    // getRequest.fail(function(jqXhr, status, error){
+    //     console.log(status);
+    //     console.log(error);
+    // })
+
+
+
+
+
+
+})();
+</script>
+
+</body>
+</html>

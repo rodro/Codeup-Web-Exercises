@@ -24,7 +24,14 @@
         ],
         "price": 200
     }, {
-        "title": "Screwdrivers",
+        "title": "Screw Drivers",
+        "quantity": 25,
+        "categories": [
+            "tool"
+        ],
+        "price": 10
+    }, {
+        "title": "Screw Drivers",
         "quantity": 25,
         "categories": [
             "tool"

@@ -11,11 +11,14 @@ th,td {
   padding: 5px;
 }
 </style>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
 </head>
 <body>
 
 <h1>My Tool Store</h1>
-<input id="ajax-button type"='button' onclick='sendRequest()' value='Pull Request'>
+<button id="ajax-button">Press this to refresh</button>
 <table id="products">
     <thead>
         <tr>
@@ -23,30 +26,6 @@ th,td {
             <th>Quantity</th>
             <th>Price</th>
             <th>Categories</th>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
         </tr>
     </thead>
     <tbody id="insertProducts"></tbody>
@@ -60,15 +39,23 @@ $('#ajax-button').click(sendRequest);
 
     function sendRequest() {
         var getRequest = $.get("/data/inventory.json");
+               $.get("data/inventory.json").done(function(data){
+            var items = [];
+            $.each (data, function (key, val){
+                items.push ("<tr>");
+                items.push ("<td id='insertProducts'"+key+"''>"+val.title+"</td>");
+                items.push ("<td id='insertProducts'"+key+"''>"+val.quantity+"</td>");
+                items.push ("<td id='insertProducts'"+key+"''>"+val.price+"</td>");
+                items.push ("<td id='insertProducts'"+key+"''>"+val.categories+"</td>");
+                items.push ("</tr>");
+            });
+           
+console.log(items);
 
-        $.get(getRequest).done(function(data, status) {
-            console.log(data);
-        });
-
-        getRequest.fail(function(jqXhr, status, error) {
-            console.log(status);
-            console.log(error);
-        });
+            $('tbody').html(items.join(""));
+        
+    });
+      
     }
 
 
@@ -81,12 +68,24 @@ $('#ajax-button').click(sendRequest);
     //             its contents and fields
     //       HINT: You will want to target #insertProducts for your new HTML elements
 // function sendRequest (){
-    $.get("data/inventory.json").done(function(data)
-            {console.log(data);
+    $.get("data/inventory.json").done(function(data){
+            var items = [];
+            $.each (data, function (key, val){
+                items.push ("<tr>");
+                items.push ("<td id='insertProducts'"+key+"''>"+val.title+"</td>");
+                items.push ("<td id='insertProducts'"+key+"''>"+val.quantity+"</td>");
+                items.push ("<td id='insertProducts'"+key+"''>"+val.price+"</td>");
+                items.push ("<td id='insertProducts'"+key+"''>"+val.categories+"</td>");
+                items.push ("</tr>");
+            });
+           
+console.log(items);
 
-    })
+            $('tbody').html(items.join(""));
+        
+    });
 
-    // var getRequest = $.get(".data/inventory.json")
+    // var getRequest = $.get("data/inventory.json")
 
 
     // getRequest.done(function(data, status){

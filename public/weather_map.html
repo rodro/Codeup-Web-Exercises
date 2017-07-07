@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+    <!-- Bootstrap JS -->
+   <!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <title>Weather Map</title>
+    <!-- jQuery Version 2.2.4 -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+    
+    <!-- Bootstrap CSS -->
+    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+        <style>
+            div{
+            color: #000;
+            font-family: Tahoma, Verdana, Segoe, sans-serif;
+            padding: 10px;
+            }
+        #days{
+            background-color: lightGrey;
+            display: flex;
+            height: 150px;
+            width: 200px;
+            border : 1px solid black
+
+            }
+       
+        #topLable {
+            
+            text-align: center;
+            border: 1px solid white;
+            color: #fff;
+            font-family: Tahoma, Verdana, Segoe, sans-serif;
+            padding: 10px;
+            background-color:#4F628E;
+            width: 400px;
+            }
+        body {
+             background-color: LightBlue;
+            }
+        
+         </style>
+         <style>
+            .left{float:left; width:33%;}
+        </style>
+</head>
+
+    <h1 id= "topLable" >Weather Application</h1>
+    <h3 >San Antonio</h3>
+    <body>
+    
+
+
+    <main >
+       <div class="container-fluid">
+        <span class="row">
+            <div class="left" id="days" id="day1" >
+                <div id="panel">
+                    
+                </div>
+            </div>
+            <div class="left" id="days" id="day2">
+                
+            </div>
+            <div class="left" id="days" id="day3">
+                
+            </div>
+        </span>
+
+
+    </main>
+    
+    
+    
+
+    <!-- Custom JS -->
+    <script>
+    	
+    $.ajax("http://api.openweathermap.org/data/2.5/forecast/daily", {
+    data: {
+        APPID: "a9f54c1676a97f64d7aeeea392274f52",
+        lat:    29.423017,
+        lon:   -98.48527,
+        units: "imperial"
+    }
+    }).done(function(data) {
+        console.log(data.list[0].temp.min);
+        console.log(data.list[0].temp.max);
+        console.log(data.list[0])
+        loadBox(data);
+   });
+    
+    function loadBox(data){
+        var content = "";
+            content += "<h4>" + data.list[0].temp.max + "°";
+            content += "/" + data.list[0].temp.min + "</h4>";
+            content+= "<h4>" + data.list[0].temp.max;
+            content
+
+            $('#panel').html(content); 
+
+      
+    }
+
+ 
+    </script>
+
+</body>
+
+</html>

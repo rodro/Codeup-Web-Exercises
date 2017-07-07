@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
+    
+    <title>Function Warm Up</title>
+    
+    <h1 class="center">Dog Query</h1>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <style>
+        table,th,td {
+            
+            border : 1px solid black;
+            border-collapse: collapse;
+            }
+        th,td {
+            padding: 5px;
+            }
+        .center {
+             text-align: center;
+            border: 3px solid green;
+            }
+         </style>
+
+</head>
+
+    <body>
+    <table class="center" id="dogsList">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Color</th>
+                <th>Age</th>       
+            </tr>
+        </thead>
+        <tbody id="insertDogs"></tbody>
+    </table>
+
+
+    <main class="container">
+        
+
+
+    </main>
+    
+    <!-- jQuery Version 2.2.4 -->
+    <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+    <!-- Custom JS -->
+    <script>
+    	
+    $(document).ready(function() {
+    	"use strict";
+
+        // create a function called isOldDog() that takes in an array of objects and returns an array of booleans. A value of true will be added to the output array if the age property value of a given object is greater than 10, otherwise a value of false will be added to the output array.
+        function isOldDog(dogArray) {
+           var dogOutputArray =[];
+                dogArray.forEach(function(dogList) {
+                      dogList.age
+                      if (dogList.age > 10){
+                        dogOutputArray.push(true);
+                      } 
+                      else {
+                        dogOutputArray.push(false);
+                      }
+           });
+
+           
+           console.log(dogArray);
+           return dogArray
+        }
+
+        // create a function makeRequest() that makes a GET request to the dogs.json file. 
+        // In the .done method, console.log the returned value of isOldDog(data).
+        
+        function makeRequest() {
+        var url = "data/dogs.json";
+
+        var request = $.get(url);
+
+        request.done(function(data, status, request) {
+
+               
+                console.log(isOldDog(data))
+
+        })
+        // Call the makeRequest() function to test
+        $('tbody').html(makeRequest.join(""));
+    	
+   };
+
+    </script>
+
+</body>
+
+</html>

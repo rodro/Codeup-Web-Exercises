@@ -93,10 +93,11 @@
                 </div>
             </div>
         </span>
-
+        <div>
+            <iframe width="650" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?zoom=10&center=29.4241%2C-98.4936&key=AIzaSyAIhKLMUI-OVikRLCmEDZWEsditXNkpJdg" allowfullscreen></iframe>
+        </div>
 
     </main>
-    
     
     
 
@@ -105,23 +106,26 @@
     var lat = "36.600238";
     var lon = "-121.894676";   
 
+    makeRequest(lat,lon)
 
-    $.ajax("http://api.openweathermap.org/data/2.5/forecast/daily", {
-    data: {
-        APPID: "a9f54c1676a97f64d7aeeea392274f52",
-        lat:    29.423017,
-        lon:   -98.48527,
-        units: "imperial",
-        cnt: 3
+    function makeRequest(lat,lon){
+
+        $.ajax("http://api.openweathermap.org/data/2.5/forecast/daily", {
+        data: {
+            APPID: "a9f54c1676a97f64d7aeeea392274f52",
+            lat:   lat,
+            lon:   lon,
+            units: "imperial",
+            cnt: 3
+        }
+        }).done(function(data) {
+            console.log(data.list[0].temp.min);
+            console.log(data.list[0].temp.max);
+            console.log(data.list[0]);
+            
+            loadBoxes(data);
+       });
     }
-    }).done(function(data) {
-        console.log(data.list[0].temp.min);
-        console.log(data.list[0].temp.max);
-        console.log(data.list[0]);
-        
-        loadBoxes(data);
-   });
-    
     
 
 
@@ -148,7 +152,15 @@
             });
         }
 
-        
+              $("#latlong").click(function(){
+                    lat = $("#lat").val();
+                    lon = $("#lon").val();
+           
+                    console.log (lat,lon);
+                    makeRequest(lat,lon);
+                 });
+
+
     </script>
 
 </body>

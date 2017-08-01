@@ -1,168 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon"> 
-    <!-- Bootstrap JS -->
-   <!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
-    <title>Weather Map</title>
-    <!-- jQuery Version 2.2.4 -->
-    <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
-
-    
-    <!-- Bootstrap CSS -->
-    <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
-        <style>
-            div{
-            color: #000;
-            font-family: Tahoma, Verdana, Segoe, sans-serif;
-            padding: 5px;
-            }
-        #days{
-            background-color: lightGrey;
-            display: flex;
-            height: 280px;
-            width: 200px;
-            border : 1px solid black
-
-            }
-       
-        #topLable {
-            
-            text-align: center;
-            border: 1px solid white;
-            color: #fff;
-            font-family: Tahoma, Verdana, Segoe, sans-serif;
-            padding: 10px;
-            background-color:#4F628E;
-            width: 400px;
-            }
-        body {
-             background-color: LightBlue;
-            }
-        .container-fluid{
-        position: absolute;
-        margin: 8px 2vw 5vh 5vw;
-        }
-        .panelFlare{
-        text-align: center;
-        margin: 0px 0vw 5vh 0vw;
-        }
-         </style>
-         <style>
-        .left{
-            float:left;
-            width:3%;
-            width: 640px; /*can be in percentage also.*/
-            height: auto;
-            margin: 0 auto;
-            padding: 10px;
-            position: relative;
-        }
-        </style>
-</head>
-
-    <h1 id= "topLable" >Weather Application</h1>
-    <h3 >San Antonio</h3>
-    <input type="text" id="lat" name="lat" placeholder="Latitude"><br>
-    <input type="text" id="lon" name="long" placeholder="Longitude"><br>
-    <input type="submit" id="latlong" value="Submit">
-    <body>
-    
-
-
-    <main >
-       <div class="container-fluid">
-        <span class="row">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
+      <!-- Bootstrap JS -->
+      <!--  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+      <title>Weather Map</title>
+      <!-- jQuery Version 2.2.4 -->
+      <script src="http://code.jquery.com/jquery-2.2.4.min.js"></script>
+      <!-- Bootstrap CSS -->
+      <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+      <style>
+         div{
+         color: #000;
+         font-family: Tahoma, Verdana, Segoe, sans-serif;
+         padding: 5px;
+         }
+         #days{
+         background-color: lightGrey;
+         display: flex;
+         height: 280px;
+         width: 200px;
+         border : 1px solid black
+         }
+         #topLable {
+         text-align: center;
+         border: 1px solid white;
+         color: #fff;
+         font-family: Tahoma, Verdana, Segoe, sans-serif;
+         padding: 10px;
+         background-color:#4F628E;
+         width: 400px;
+         }
+         body {
+         background-color: LightBlue;
+         }
+         .container-fluid{
+         position: absolute;
+         margin: 8px 2vw 5vh 5vw;
+         }
+         .panelFlare{
+         text-align: center;
+         margin: 0px 0vw 5vh 0vw;
+         }
+      </style>
+      <style>
+         .left{
+         float:left;
+         width:3%;
+         width: 640px; /*can be in percentage also.*/
+         height: auto;
+         margin: 0 auto;
+         padding: 10px;
+         position: relative;
+         }
+      </style>
+   </head>
+   <h1 id= "topLable" >Weather Application</h1>
+   <h3 >San Antonio</h3>
+   <input type="text" id="lat" name="lat" placeholder="Latitude"><br>
+   <input type="text" id="lon" name="long" placeholder="Longitude"><br>
+   <input type="submit" id="latlong" value="Submit">
+   <body>
+      <main >
+         <div class="container-fluid">
+         <span class="row">
             <div class="left" id="days" id="day1" >
-                <div id="panel1" class="panelFlare">
-                    
-                </div>
+               <div id="panel1" class="panelFlare">
+               </div>
             </div>
             <div class="left" id="days" id="day2">
-                <div id="panel2" class="panelFlare">
-                    
-                </div>
+               <div id="panel2" class="panelFlare">
+               </div>
             </div>
             <div class="left" id="days" id="day3">
-                <div id="panel3" class="panelFlare">
-                    
-                </div>
+               <div id="panel3" class="panelFlare">
+               </div>
             </div>
-        </span>
-        <div>
+         </span>
+         <div>
             <iframe width="650" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/view?zoom=10&center=29.4241%2C-98.4936&key=AIzaSyAIhKLMUI-OVikRLCmEDZWEsditXNkpJdg" allowfullscreen></iframe>
-        </div>
+         </div>
+      </main>
+      <!-- Custom JS -->
+      <script>
+         var lat = "36.600238";
+         var lon = "-121.894676";
 
-    </main>
-    
-    
+         makeRequest(lat,lon)
 
-    <!-- Custom JS -->
-    <script>
-    var lat = "36.600238";
-    var lon = "-121.894676";   
+         function makeRequest(lat,lon){
 
-    makeRequest(lat,lon)
+             $.ajax("http://api.openweathermap.org/data/2.5/forecast/daily", {
+             data: {
+                 APPID: "a9f54c1676a97f64d7aeeea392274f52",
+                 lat:   lat,
+                 lon:   lon,
+                 units: "imperial",
+                 cnt: 3
+             }
+             }).done(function(data) {
+                 console.log(data.list[0].temp.min);
+                 console.log(data.list[0].temp.max);
+                 console.log(data.list[0]);
 
-    function makeRequest(lat,lon){
-
-        $.ajax("http://api.openweathermap.org/data/2.5/forecast/daily", {
-        data: {
-            APPID: "a9f54c1676a97f64d7aeeea392274f52",
-            lat:   lat,
-            lon:   lon,
-            units: "imperial",
-            cnt: 3
-        }
-        }).done(function(data) {
-            console.log(data.list[0].temp.min);
-            console.log(data.list[0].temp.max);
-            console.log(data.list[0]);
-            
-            loadBoxes(data);
-       });
-    }
-    
-
-
-        function loadBoxes(data){
-            data.list.forEach(function(element,index){
-                console.log (element);
-                
-                
-                var content = "";
-                content += "<h4>" + element.temp.max + "°";
-                content += "/ " + element.temp.min+ "°" + "</h4>";
-                content += "<img src=http://openweathermap.org/img/w/" + element.weather[0].icon + ".png>"; 
-                content += "<h6>" + element.weather[0].main;
-                content += ": " + element.weather[0].description + "<h6>";
-                content += "<h6>" + "Humidity";
-                content += ": " + element.humidity + "<h6>";
-                content += "<h6>" + "Wind";
-                content += ": " + element.speed + "<h6>";
-                content += "<h6>" + "Pressure";
-                content += ": " + element.pressure + "<h6>";
-                var panel = "#panel" + (index + 1);
-                console.log(panel);
-                $(panel).html(content);
+                 loadBoxes(data);
             });
-        }
+         }
 
-              $("#latlong").click(function(){
-                    lat = $("#lat").val();
-                    lon = $("#lon").val();
-           
-                    console.log (lat,lon);
-                    makeRequest(lat,lon);
+
+
+             function loadBoxes(data){
+                 data.list.forEach(function(element,index){
+                     console.log (element);
+
+
+                     var content = "";
+                     content += "<h4>" + element.temp.max + "°";
+                     content += "/ " + element.temp.min+ "°" + "</h4>";
+                     content += "<img src=http://openweathermap.org/img/w/" + element.weather[0].icon + ".png>";
+                     content += "<h6>" + element.weather[0].main;
+                     content += ": " + element.weather[0].description + "<h6>";
+                     content += "<h6>" + "Humidity";
+                     content += ": " + element.humidity + "<h6>";
+                     content += "<h6>" + "Wind";
+                     content += ": " + element.speed + "<h6>";
+                     content += "<h6>" + "Pressure";
+                     content += ": " + element.pressure + "<h6>";
+                     var panel = "#panel" + (index + 1);
+                     console.log(panel);
+                     $(panel).html(content);
                  });
+             }
+
+                   $("#latlong").click(function(){
+                         lat = $("#lat").val();
+                         lon = $("#lon").val();
+
+                         console.log (lat,lon);
+                         makeRequest(lat,lon);
+                      });
 
 
-    </script>
-
-</body>
-
+      </script>
+   </body>
 </html>

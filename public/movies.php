@@ -137,9 +137,9 @@
          </section>
          <section class="links">
             <!-- Add a link that will show all movies  -->
-            <a href="movies.php?">Show all movies</a>
+            <a href="movies.php">Show all movies</a>
             <!-- Add a link that will show only movies with a release date after 2000 -->
-            <a href="movies.php?release=>2000">All movies released after 2000</a>
+            <a href="movies.php?release=2000">All movies released after 2000</a>
             <!-- Add a link that shows all movies w/ the comedy genre -->
             <a href="movies.php?genre=comedy">Show only comedies</a>
             <!-- Add a link that shows all movies w/ the sci-fi genre -->

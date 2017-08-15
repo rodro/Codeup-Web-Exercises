@@ -9,3 +9,6 @@
         <h1>Authorized!</h1>
   </body>
 </html>
+
+
+<?php  ?>

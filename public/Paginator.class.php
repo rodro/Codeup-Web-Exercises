@@ -1,8 +1,27 @@
-<?php for( $i = 0; $i < count( $results->data ); $i++ ) : ?>
-        <tr>
-                <td><?php echo $results->data[$i]['Name']; ?></td>
-                <td><?php echo $results->data[$i]['Country']; ?></td>
-                <td><?php echo $results->data[$i]['Continent']; ?></td>
-                <td><?php echo $results->data[$i]['Region']; ?></td>
-        </tr>
-<?php endfor; ?>
+<?php
+public function getData( $limit = 10, $page = 1 ) {
+     
+    $this->_limit   = $limit;
+    $this->_page    = $page;
+ 
+    if ( $this->_limit == 'all' ) {
+        $query      = $this->_query;
+    } else {
+        $query      = $this->_query . " LIMIT " . ( ( $this->_page - 1 ) * $this->_limit ) . ", $this->_limit";
+    }
+    $rs             = $this->_conn->query( $query );
+ 
+    while ( $row = $rs->fetch_assoc() ) {
+        $results[]  = $row;
+    }
+ 
+    $result         = new stdClass();
+    $result->page   = $this->_page;
+    $result->limit  = $this->_limit;
+    $result->total  = $this->_total;
+    $result->data   = $results;
+ 
+    return $result;
+}
+
+?>

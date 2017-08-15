@@ -6,7 +6,7 @@
     $limit      = ( isset( $_GET['limit'] ) ) ? $_GET['limit'] : 25;
     $page       = ( isset( $_GET['page'] ) ) ? $_GET['page'] : 1;
     $links      = ( isset( $_GET['links'] ) ) ? $_GET['links'] : 7;
-    $query      = "SELECT City.Name, City.CountryCode, Country.Code, Country.Name AS Country, Country.Continent, Country.Region FROM City, Country WHERE City.CountryCode = Country.Code";
+    $query      = "SELECT parks_db.name, parks_db.location, parks_db.date_established, parks_db.area_in_acres";
 
     $Paginator  = new Paginator( $conn, $query );
 
@@ -28,9 +28,9 @@
                           <?php for( $i = 0; $i < count( $results->data ); $i++ ) : ?>
   <tr>
           <td><?php echo $results->data[$i]['Name']; ?></td>
-          <td><?php echo $results->data[$i]['Country']; ?></td>
-          <td><?php echo $results->data[$i]['Continent']; ?></td>
-          <td><?php echo $results->data[$i]['Region']; ?></td>
+          <td><?php echo $results->data[$i]['Location']; ?></td>
+          <td><?php echo $results->data[$i]['date_established']; ?></td>
+          <td><?php echo $results->data[$i]['area_in_acres']; ?></td>
   </tr>
 <?php endfor; ?>
                         </thead>

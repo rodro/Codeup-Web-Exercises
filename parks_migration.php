@@ -1,7 +1,7 @@
 <?php
 require_once "park_logins.php";
 require_once "db_connect.php";
-require_once "parks.php"
+
 
 // drop table
 $connection->exec("DROP TABLE IF EXISTS parks");

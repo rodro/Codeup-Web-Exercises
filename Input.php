@@ -10,7 +10,8 @@ class Input
      */
     public static function has($key)
     {
-        // TODO: Fill in this function
+        $result = isset($_REQUEST[$key]) ? true : false;
+        return $result;
     }
 
     /**
@@ -22,7 +23,13 @@ class Input
      */
     public static function get($key, $default = null)
     {
-        // TODO: Fill in this function
+        $result = (self::has($key)) ? $_REQUEST[$key] : $default;
+        return $result;
+    }
+
+    public static function escape($input)
+    {
+        return htmlspecialchars(strip_tags($input));
     }
 
     ///////////////////////////////////////////////////////////////////////////
